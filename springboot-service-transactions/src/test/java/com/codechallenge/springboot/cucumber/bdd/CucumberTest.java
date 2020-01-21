@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
 
  */
 
-@RunWith(Cucumber.class)
+@RunWith(CucumberReportRunner.class)
 
 @CucumberOptions(features = "classpath:features", plugin = {"pretty",
 

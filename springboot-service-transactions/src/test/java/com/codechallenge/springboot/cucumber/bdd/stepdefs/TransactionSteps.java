@@ -56,17 +56,25 @@ public class TransactionSteps extends AbstractSteps implements En {
 
 
 
-//    And("with the following transactions", (DataTable transactionDt) -> {
-//
-//      List<Transaction> transactionList = transactionDt.asList(Transaction.class);
-//
-//      super.testContext()
-//
-//          .getPayload(Transaction.class)
-//
-//          .setTransactions(transactionList);
-//
-//    });
+    And("with the following Account", (DataTable transactionDt) -> {
+
+      List<Transaction> transactionList = transactionDt.asList(Transaction.class);
+
+      super.testContext()
+
+          .getPayload(Transaction.class).setReference("12345A");
+
+    });
+    
+    And("with the following Channel", (DataTable transactionDt) -> {
+
+        List<Transaction> transactionList = transactionDt.asList(Transaction.class);
+
+        super.testContext()
+
+            .getPayload(Transaction.class).setReference("CLIENT");
+
+      });
 
 
     When("user saves the new transaction{string}", (String testContext) -> {

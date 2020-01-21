@@ -1,4 +1,4 @@
-Feature: Create Employee
+Feature: Create Transaction
 
 
 
@@ -6,24 +6,14 @@ Feature: Create Employee
 
 
 
-    Given user wants to create an employee with the following attributes
+    Given user wants to create an transaction with the following attributes
 
-      | id  | firstName | lastName | dateOfBirth | startDate  | employmentType | email               |
+      | id  | reference | ammount | create_at | account | fee | description |
 
-      | 100 | Rachel    | Green    | 1990-01-01  | 2018-01-01 | Permanent      | rachel.green@fs.com |
-
-
-
-    And with the following phone numbers
-
-      | id  | type   | isdCode | phoneNumber | extension |
-
-      | 102 | Mobile | +1      | 2141112222  |           |
-
-      | 103 | Office | +1      | 8362223000  | 333       |
+      | 1 | 12225A | 193.38  | NOW() | 2342334 | 3.18 | Restaurant payment |
+      | 2 | 12223435A | 13.38  | NOW() | 2342334 | 3.18 | Cine payment |
 
 
-
-    When user saves the new employee 'WITH ALL REQUIRED FIELDS'
+    When user saves the new transaction 'WITH ALL REQUIRED FIELDS'
 
     Then the save 'IS SUCCESSFUL'
